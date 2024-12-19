@@ -1,0 +1,14 @@
+{
+  "OutputFoldersPerTargetSystem": {
+    "Local Machine": [
+      "CMakeJSON\\out\\build\\x64-debug",
+      "CMakeJSON\\out\\install\\x64-debug",
+      "CMakeJSON\\out\\build\\x64-release",
+      "CMakeJSON\\out\\install\\x64-release",
+      "CMakeJSON\\out\\build\\x86-debug",
+      "CMakeJSON\\out\\install\\x86-debug",
+      "CMakeJSON\\out\\build\\x86-release",
+      "CMakeJSON\\out\\install\\x86-release"
+    ]
+  }
+}
