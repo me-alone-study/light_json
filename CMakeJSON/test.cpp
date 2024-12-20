@@ -10,7 +10,7 @@ static int test_count = 0;
 static int test_pass = 0;
 
 
-//这个宏的编写技巧（反斜杠）需要学习，我自己手打的话会报错
+
 /*
 EXPECT_EQ_BASE 是通用的测试断言基础设施
 EXPECT_EQ_INT 是专门用于整数相等测试的便捷包装

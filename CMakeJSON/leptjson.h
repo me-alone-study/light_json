@@ -5,6 +5,8 @@
 
 //初始化类型
 #define lept_init(v) do { (v)->type = LEPT_NULL; } while(0)
+#define lept_set_null(v)    lept_free(v);
+
 
 
 typedef enum{LEPT_NULL, LEPT_FALSE, LEPT_TRUE, LEPT_NUMBER, LEPT_STRING, LEPT_ARRAY, LEPT_OBJECT}	lept_type;

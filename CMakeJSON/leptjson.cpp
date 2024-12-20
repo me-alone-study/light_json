@@ -12,7 +12,7 @@
 typedef struct {
     const char* json;
     char* stack;
-    size_t size, top;	//top是栈顶的位置，由于我们会扩展stack，所以不要把top用指针形式存储
+    size_t size, top;	//top是栈顶的位置，由于会扩展stack，所以不要把top用指针形式存储
 }lept_context;
 
 #define EXPECT(c, ch) do { assert(*c->json == (ch)); c->json++; } while(0)
@@ -90,7 +90,6 @@ static int lept_parse_string(lept_context* c, lept_value* v) {
             PUTC(c, ch);
         }
     }
-
 }
 
 int lept_get_boolean(const lept_value* v) {
@@ -203,7 +202,7 @@ lept_type lept_get_type(const lept_value* v) {
 void lept_set_string(lept_value* v, const char* s, size_t len) {
     assert(v != NULL && (s != NULL || len == 0));
     lept_free(v);
-    v->u.s.s = (char*)malloc(len + 1);
+    v->u.s.s = new char[len + 1];
     memcpy(v->u.s.s, s, len);
     v->u.s.s[len] = '\0';
     v->u.s.len = len;
@@ -213,7 +212,7 @@ void lept_set_string(lept_value* v, const char* s, size_t len) {
 void lept_free(lept_value* v) {
     assert(v != NULL);
     if (v->type == LEPT_STRING)
-        free(v->u.s.s);
+        delete[] v->u.s.s;
     v->type = LEPT_NULL;
 }
 
