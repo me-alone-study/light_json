@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CMakeJSON"
+    "\\CMakeJSON",
+    "\\CMakeJSON\\out",
+    "\\CMakeJSON\\out\\build",
+    "\\CMakeJSON\\out\\build\\CMakeFiles",
+    "\\CMakeJSON\\out\\build\\CMakeFiles\\3.31.0",
+    "\\CMakeJSON\\out\\build\\CMakeFiles\\3.31.0\\CompilerIdC"
   ],
+  "SelectedNode": "\\CMakeJSON\\out\\build\\CMakeFiles\\3.31.0\\CompilerIdC\\CompilerIdC.vcxproj",
   "PreviewInSolutionExplorer": false
 }
