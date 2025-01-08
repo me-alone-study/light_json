@@ -270,6 +270,29 @@ static void test_parse() {
     test_parse_invalid_unicode_surrogate();
 }
 
+static void test_parse_miss_key() {
+    TEST_ERROR(LEPT_PARSE_MISS_KEY, "{:1,");
+    TEST_ERROR(LEPT_PARSE_MISS_KEY, "{1:1,");
+    TEST_ERROR(LEPT_PARSE_MISS_KEY, "{true:1,");
+    TEST_ERROR(LEPT_PARSE_MISS_KEY, "{false:1,");
+    TEST_ERROR(LEPT_PARSE_MISS_KEY, "{null:1,");
+    TEST_ERROR(LEPT_PARSE_MISS_KEY, "{[]:1,");
+    TEST_ERROR(LEPT_PARSE_MISS_KEY, "{{}:1,");
+    TEST_ERROR(LEPT_PARSE_MISS_KEY, "{\"a\":1,");
+}
+
+static void test_parse_miss_colon() {
+    TEST_ERROR(LEPT_PARSE_MISS_COLON, "{\"a\"}");
+    TEST_ERROR(LEPT_PARSE_MISS_COLON, "{\"a\",\"b\"}");
+}
+
+static void test_parse_miss_comma_or_curly_bracket() {
+    TEST_ERROR(LEPT_PARSE_MISS_COMMA_OR_CURLY_BRACKET, "{\"a\":1");
+    TEST_ERROR(LEPT_PARSE_MISS_COMMA_OR_CURLY_BRACKET, "{\"a\":1]");
+    TEST_ERROR(LEPT_PARSE_MISS_COMMA_OR_CURLY_BRACKET, "{\"a\":1 \"b\"");
+    TEST_ERROR(LEPT_PARSE_MISS_COMMA_OR_CURLY_BRACKET, "{\"a\":{}");
+}
+
 static void test_access_null() {
     lept_value v;
     lept_init(&v);
